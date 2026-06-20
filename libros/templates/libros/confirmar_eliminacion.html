@@ -1,0 +1,17 @@
+{% extends 'libros/base.html' %}
+
+{% block content %}
+    <h2>Confirmar eliminación</h2>
+
+    <p>¿Estás seguro de que deseas eliminar el libro "{{ libro.titulo }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <button type="submit">Sí, eliminar</button>
+    </form>
+
+    <p>
+        <a href="{% url 'listar_libros' %}">Cancelar y volver al listado</a>
+    </p>
+{% endblock %}

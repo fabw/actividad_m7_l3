@@ -1,0 +1,21 @@
+{% extends 'libros/base.html' %}
+
+{% block content %}
+    <h2>Listado de libros</h2>
+
+    {% if libros %}
+        <ul>
+            {% for libro in libros %}
+                <li>
+                    {{ libro.titulo }} - {{ libro.autor }} - {{ libro.anio }}
+                    |
+                    <a href="{% url 'editar_libro' libro.id %}">Editar</a>
+                    |
+                    <a href="{% url 'eliminar_libro' libro.id %}">Eliminar</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay libros registrados.</p>
+    {% endif %}
+{% endblock %}

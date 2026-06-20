@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD de Libros</title>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Libros</h1>
+
+        <nav>
+            <a href="{% url 'listar_libros' %}">Listado de libros</a> |
+            <a href="{% url 'crear_libro' %}">Crear libro</a>
+        </nav>
+
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'libros/base.html' %}
+
+{% block content %}
+    <h2>Formulario de libro</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p>
+        <a href="{% url 'listar_libros' %}">Volver al listado</a>
+    </p>
+{% endblock %}
